@@ -1,5 +1,5 @@
 import connection from './connection.mts'
-
+import './render.mts'
 document.addEventListener('keydown',(event: KeyboardEvent) =>{
     if(event.key === 'w' || event.key === 'W' || event.key === 'ц' || event.key === 'Ц'){
         connection.invoke("OnForward")
