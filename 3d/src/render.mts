@@ -1,66 +1,142 @@
 import * as THREE from 'three';
 import { HEIGHT, WIDHT } from './settings.mts';
 import * as CANNON from 'cannon-es'
-const canvac = document.getElementById("canvas")
-if (!canvac){
-    throw "sssss"
-}
+import { canvas } from './canvas.mts';
+import { input } from './control.mts';
+import {Player } from './Player.mts'
+import { Vector3d } from './Entity.mts';
+import { Camera } from './Camera.mts';
+import { FOV } from './settings.mts';
+import connection from './connection.mts';
+const renderer = new THREE.WebGLRenderer({ canvas: canvas });
+const world = new CANNON.World();
+renderer.setSize(WIDHT, HEIGHT);
+renderer.shadowMap.enabled = true; // ✅ Включаем тени
 
-const renderer = new THREE.WebGLRenderer({canvas: canvac})
-const scene = new THREE.Scene()
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x87ceeb); // небо для наглядности
 
-const camera = new THREE.PerspectiveCamera( 45,  WIDHT/ HEIGHT, 1, 1000 );
-const world = new CANNON.World()
-const shape_obj = new CANNON.Box(new CANNON.Vec3(20,20,20))
-const obj = new CANNON.Body({mass: 0})
-const ambientOclusion = new THREE.AmbientLight(0xffffff,1)
+// Камера
+const player = new Player()
+const camera = new Camera(FOV,WIDHT/HEIGHT,0.01)
+camera.folowTarget = player
+player.pos.y = 100
+world.addBody(player.obj)
+// === 🌟 ОСВЕЩЕНИЕ ===
+// Фоновый свет (мягкая засветка)
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+scene.add(ambientLight);
 
-camera.lookAt(new THREE.Vector3(-1,-1,-1))
+// Направленный свет (как солнце) — основной источник
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
+directionalLight.position.set(20, 30, 20);
+directionalLight.castShadow = true; // ✅ Тени
+directionalLight.shadow.mapSize.set(2048, 2048);
+scene.add(directionalLight);
+
+// Дополнительный заполняющий свет (опционально)
+const fillLight = new THREE.PointLight(0x88ccff, 0.4, 50);
+fillLight.position.set(-10, 10, -10);
+scene.add(fillLight);
+
+// === 🌍 ПОЛ ===
 const groundShape = new CANNON.Plane();
-const groundBody = new CANNON.Body({ mass: 0 }); // mass 0 = статичный
+const groundBody = new CANNON.Body({ mass: 0 });
+groundBody.quaternion.setFromAxisAngle(new CANNON.Vec3(1, 0, 0), -Math.PI / 2); // 🔄 Поворот для Plane
 groundBody.addShape(groundShape);
-
 world.addBody(groundBody);
 
-// Визуализация пола
 const groundGeo = new THREE.PlaneGeometry(50000, 50000);
-const groundMat = new THREE.MeshStandardMaterial({ color: 0x444444 });
+const groundMat = new THREE.MeshStandardMaterial({ 
+    color: 0x444444,
+    roughness: 0.8,
+    metalness: 0.2
+});
 const groundMesh = new THREE.Mesh(groundGeo, groundMat);
-
-
+groundMesh.rotation.x = -Math.PI / 2; // 🔄 Поворот в Three.js
+groundMesh.receiveShadow = true; // ✅ Принимает тени
 scene.add(groundMesh);
 
-obj.addShape(shape_obj)
+// === 📦 КУБ (физика + визуал) ===
+// Физика
+const shape_obj = new CANNON.Box(new CANNON.Vec3(2, 2, 2)); // ✅ Уменьшил размер для наглядности
+const objBody = new CANNON.Body({ mass: 1 }); // ✅ mass: 1 — чтобы падал
+objBody.addShape(shape_obj);
+objBody.position.set(0, 10, 0); // 📍 Начальная позиция выше пола
+world.addBody(objBody);
 
-world.addBody(obj)
-scene.add(ambientOclusion)
+// Визуал
+const boxGeo = new THREE.BoxGeometry(4, 4, 4); // 2*2*2 в Cannon = 4x4x4 в Three.js
+const boxMat = new THREE.MeshStandardMaterial({ 
+    color: 0x00ff88,
+    roughness: 0.3,
+    metalness: 0.1
+});
+const boxMesh = new THREE.Mesh(boxGeo, boxMat);
+boxMesh.castShadow = true; // ✅ Отбрасывает тени
+scene.add(boxMesh);
+let YAW = 0
+let PITCH = 0
 
+CANNON.RaycastResult
 
 
 function animation(){
-
+    
     requestAnimationFrame(animation)
-    camera.position.set(obj.position.x,obj.position.y,obj.position.z)
+    // camera.position.set(obj.position.x,obj.position.y,obj.position.z)
+    
+    YAW -= input.mouse.movementX / 1000
+
+    PITCH -= input.mouse.movementY / 1000
+    PITCH = Math.max(-Math.PI / 2, Math.min(Math.PI /2, PITCH))
+    camera.quaternion.setFromEuler(new THREE.Euler(PITCH,YAW,0,"YXZ"))
+    let vectorCamera : THREE.Vector3 = new THREE.Vector3(0,0,0)
+    
+    camera.getWorldDirection(vectorCamera)
+    vectorCamera.y = 0
+    vectorCamera.normalize()
+    
+    
+    let Mvector = new Vector3d(0,0,0)
+    if (input.keyboard["w"]?.isDown){
+        // debugger
+        player.obj.applyForce(new CANNON.Vec3(vectorCamera.x * 2000,0,vectorCamera.z * 2000))
+        Mvector.x += vectorCamera.x * 2000
+        Mvector.y += 0
+        Mvector.x += vectorCamera.z * 2000
+        
+    }
+    if (input.keyboard["s"]?.isDown){
+        player.obj.applyForce(new CANNON.Vec3(-vectorCamera.x * 2000,0,-vectorCamera.z * 2000))
+        Mvector.x -= vectorCamera.x * 2000
+        Mvector.y += 0
+        Mvector.x -= vectorCamera.z * 2000
+    }
+    const rightDirection = Vector3d.cross(vectorCamera,new Vector3d(0,1,0))
+    if (input.keyboard["d"]?.isDown){
+        
+        player.obj.applyForce(new CANNON.Vec3(rightDirection.x * 2000,0,rightDirection.z * 2000))
+        Mvector.x += rightDirection.x * 2000
+        Mvector.y += 0
+        Mvector.x += rightDirection.z * 2000
+    }
+    
+    if (input.keyboard["a"]?.isDown){
+        player.obj.applyForce(new CANNON.Vec3(-rightDirection.x * 2000,0,-rightDirection.z * 2000))
+        Mvector.x -= rightDirection.x * 2000
+        Mvector.y += 0
+        Mvector.x -= rightDirection.z * 2000
+    }
+    
+    connection.invoke("")
     world.step(1/60)
+    player.sync()
+    camera.sync()
+    input.clear()
+    
     renderer.render(scene,camera)
 }
 animation()
 
-function Vec3ToVector3(vec : CANNON.Vec3){
-    return (new THREE.Vector3(vec.x,vec.y, vec.z))
-}
 
-// document.addEventListener('keydown',(event: KeyboardEvent) =>{
-//     if(event.key === 'w' || event.key === 'W' || event.key === 'ц' || event.key === 'Ц'){
-//         obj.velocity.set(0,0,0)
-//     }
-//     if(event.key === 'd' || event.key === 'D' || event.key === 'в' || event.key === 'В'){
-//         connection.invoke("OnRightMove")
-//     }
-//     if(event.key === 's' || event.key === 'S' || event.key === 'ы' || event.key === 'Ы'){
-//         connection.invoke("OnBackward")
-//     }
-//     if(event.key === 'a' || event.key === 'A' || event.key === 'ф' || event.key === 'Ф' ){
-//         connection.invoke("OnLeftMove")
-//     }
-// });
