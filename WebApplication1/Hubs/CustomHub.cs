@@ -28,30 +28,13 @@ namespace WebApplication1.Hubs
 
             return base.OnDisconnectedAsync(exception);
         }
-        public Task OnForward()
+        public async Task OnMove(Vector3d vector)
         {
-            _gameService.MoveForward(Context.ConnectionId);
-            Console.WriteLine("Вперед");
-            return Task.CompletedTask;
 
-        }
-        public Task OnBackward()
-        {
-            _gameService.MoveBackward(Context.ConnectionId);
-            Console.WriteLine("Назад");
-            return Task.CompletedTask;
-        }
-        public Task OnRightMove()
-        {
-            _gameService.MoveRight(Context.ConnectionId);
-            Console.WriteLine("Направо");
-            return Task.CompletedTask;
-        }
-        public Task OnLeftMove()
-        {
-            _gameService.MoveLeft(Context.ConnectionId);
-            Console.WriteLine("Налево");
-            return Task.CompletedTask;
+            _gameService.MoveForward(Context.ConnectionId, vector);
+            Console.WriteLine("Вперед");
+            
+
         }
         public Task OnCameraMove(double X, double Y)
         {

@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\hubs\\customhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:hubs\\customhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\firearm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\firearm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\service\\stateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:service\\stateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\service\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:service\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\hubs\\customhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:hubs\\customhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\vector3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\prop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\prop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\firearm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\firearm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\service\\stateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:service\\stateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\prop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\prop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\hitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\hitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\models\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:models\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB8994C3-4B38-4C8C-89DE-330C5BEA1125}|WebApplication1.csproj|c:\\users\\detreek\\desktop\\github\\service\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -102,43 +102,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StateService.cs",
-              "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Service\\StateService.cs",
-              "RelativeDocumentMoniker": "Service\\StateService.cs",
-              "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Service\\StateService.cs",
-              "RelativeToolTip": "Service\\StateService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T22:22:15.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Entity.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\Entity.cs",
               "RelativeDocumentMoniker": "Models\\Entity.cs",
               "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\Entity.cs",
               "RelativeToolTip": "Models\\Entity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-27T12:58:28.254Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "GameService.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Service\\GameService.cs",
               "RelativeDocumentMoniker": "Service\\GameService.cs",
               "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Service\\GameService.cs",
               "RelativeToolTip": "Service\\GameService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-10T18:12:46.051Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Firearm.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\Firearm.cs",
               "RelativeDocumentMoniker": "Models\\Firearm.cs",
@@ -150,19 +138,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Vector3d.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\Vector3d.cs",
               "RelativeDocumentMoniker": "Models\\Vector3d.cs",
               "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\Vector3d.cs",
               "RelativeToolTip": "Models\\Vector3d.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAwwAYAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAA8wCoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-27T13:19:34.22Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "HitBox.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\HitBox.cs",
               "RelativeDocumentMoniker": "Models\\HitBox.cs",
@@ -174,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "PhysicalProp.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\PhysicalProp.cs",
               "RelativeDocumentMoniker": "Models\\PhysicalProp.cs",
@@ -186,13 +174,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "GameState.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\GameState.cs",
               "RelativeDocumentMoniker": "Models\\GameState.cs",
               "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\GameState.cs",
               "RelativeToolTip": "Models\\GameState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-09T20:45:26.468Z"
             },
@@ -204,21 +192,33 @@
               "RelativeDocumentMoniker": "Models\\Player.cs",
               "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\Player.cs",
               "RelativeToolTip": "Models\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-27T13:00:52.72Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CustomHub.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Hubs\\CustomHub.cs",
               "RelativeDocumentMoniker": "Hubs\\CustomHub.cs",
               "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Hubs\\CustomHub.cs",
               "RelativeToolTip": "Hubs\\CustomHub.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCEAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T14:37:34.299Z",
+              "WhenOpened": "2026-02-27T14:37:34.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StateService.cs",
+              "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Service\\StateService.cs",
+              "RelativeDocumentMoniker": "Service\\StateService.cs",
+              "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Service\\StateService.cs",
+              "RelativeToolTip": "Service\\StateService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBoAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T22:22:15.553Z",
               "EditorCaption": ""
             },
             {
@@ -228,6 +228,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T20:30:27.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Prop.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\Prop.cs",
               "RelativeDocumentMoniker": "Models\\Prop.cs",
@@ -239,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Melee.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\Melee.cs",
               "RelativeDocumentMoniker": "Models\\Melee.cs",
@@ -251,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Weapon.cs",
               "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Models\\Weapon.cs",
               "RelativeDocumentMoniker": "Models\\Weapon.cs",
@@ -260,18 +272,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-27T13:11:17.421Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Detreek\\Desktop\\Github\\Service\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T20:30:27.616Z"
             },
             {
               "$type": "Document",

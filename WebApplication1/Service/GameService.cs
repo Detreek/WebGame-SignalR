@@ -8,50 +8,21 @@ namespace WebApplication1.Service
         private readonly object _lock = new();
         public GameState GameState { get; } = new GameState();
         public const int tickRate = 30;
-        public void MoveForward(string connectionId)
+        public void MoveForward(string connectionId, Vector3d vector)
         {
             lock (_lock)
             {
                 var p = GameState.players.Find(x => x.ConnectionId == connectionId);
-                p.Pos += new Vector3d(Math.Cos(p.Rot.X), Math.Sin(p.Rot.X), 0) * tickRate * p.Speed;
+                p.Pos +=  vector.Normalize() * tickRate * p.Speed;
 
             }
         }
-        public void MoveBackward(string connectionId)
-        {
-            lock (_lock)
-            {
-                var p = GameState.players.Find(x => x.ConnectionId == connectionId);
-                p.Pos -= new Vector3d(Math.Cos(p.Rot.X), Math.Sin(p.Rot.X), 0) * tickRate * p.Speed;
-
-            }
-        }
-        public void MoveRight(string connectionId)
-        {
-            lock (_lock)
-            {
-                var p = GameState.players.Find(x => x.ConnectionId == connectionId);
-                p.Pos += new Vector3d(Math.Cos(p.Rot.X - double.Pi / 2), Math.Sin(p.Rot.X - double.Pi / 2), 0) * tickRate * p.Speed;
-
-            }
-        }
-        public void MoveLeft(string connectionId)
-        {
-            lock (_lock)
-            {
-                var p = GameState.players.Find(x => x.ConnectionId == connectionId);
-                p.Pos += new Vector3d(Math.Cos(p.Rot.X + double.Pi / 2), Math.Sin(p.Rot.X + double.Pi / 2), 0)*tickRate * p.Speed; 
-                
-
-            }
-        }
-
         public void CameraMove(string connectionId, double X,double Y)
         {
             lock (_lock) 
             {
                 var p = GameState.players.Find(x => x.ConnectionId == connectionId);
-                p.Rot = new Vector3d(X,Y,0);
+                p.AngleX = X; p.AngleY = Y;
             }
         }
 

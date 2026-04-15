@@ -24,7 +24,7 @@ namespace WebApplication1.Service
             while (!stoppingToken.IsCancellationRequested) 
             {
 
-                await _hubContext.Clients.All.SendAsync("snapshot",_gameService,stoppingToken);
+                await _hubContext.Clients.All.SendAsync("snapshot",_gameService.GameState,stoppingToken);
                 await Task.Delay(GameService.tickRate, stoppingToken);
             }
         }

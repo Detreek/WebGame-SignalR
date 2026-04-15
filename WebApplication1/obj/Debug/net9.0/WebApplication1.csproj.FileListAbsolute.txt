@@ -33,3 +33,4 @@ C:\Users\Detreek\Desktop\Github\Service\WebApplication1\obj\Debug\net9.0\refint\
 C:\Users\Detreek\Desktop\Github\Service\WebApplication1\obj\Debug\net9.0\WebApplication1.pdb
 C:\Users\Detreek\Desktop\Github\Service\WebApplication1\obj\Debug\net9.0\WebApplication1.genruntimeconfig.cache
 C:\Users\Detreek\Desktop\Github\Service\WebApplication1\obj\Debug\net9.0\ref\WebApplication1.dll
+C:\Users\Detreek\Desktop\Github\Service\WebApplication1\obj\Debug\net9.0\WebApplication1.sourcelink.json

@@ -1,12 +1,14 @@
 import * as CANNON from 'cannon-es'
 
 import * as THREE from 'three';
+import connection from './connection.mts';
 
 export class Entity {
 
     obj : CANNON.Body
     mesh : THREE.Mesh
-    
+    rotY : number = 0
+    rotX : number = 0
     public get pos() : Vector3d {
         return Vector3d.fromCannon(this.obj.position)
     }
@@ -15,6 +17,16 @@ export class Entity {
     public set pos(vector3d : Vector3d) {
         this.obj.position.set(vector3d.x,vector3d.y,vector3d.z);
     }
+
+    public rotate(angleY : number, angleX : number){
+        this.obj.quaternion.setFromEuler(this.rotX + angleY,this.rotY + angleY,0,"XYZ")
+        this.rotX += angleX 
+        this.rotY += angleY
+    } 
+    
+    
+    
+    
     
     
     constructor(object : CANNON.Body,mesh : THREE.Mesh){
@@ -63,5 +75,13 @@ export class Vector3d{
     }
     static cross(v1 : Vector3d, v2 : Vector3d){
         return (new Vector3d(v1.y * v2.z - v1.z * v2.y, v1.z*v2.x - v1.x * v2.z,v1.x * v2.y - v1.y*v2.x))
+    }
+    static toCannon(vector3 : Vector3d){
+        return ( new CANNON.Vec3(vector3.x,vector3.y,vector3.z))
+
+    }
+    static toThree(vector3 : Vector3d){
+        return ( new THREE.Vector3(vector3.x,vector3.y,vector3.z))
+
     }
 }

@@ -1,29 +1,28 @@
-interface State{
-    listAllPlayers : Player[];
+import type { Vector3d } from "../Entity.mts";
+
+export interface StateDTO{
+    Players : PlayerDTO[];
     
 }
-interface Player extends Entity{
+export interface PlayerDTO extends EntityDTO{
     hp : number;
     isAlive : boolean;
     speed : number;
     playerConnectionId : string
+
     // hitbox : hitBox
 }
-interface Entity{
+interface EntityDTO{
     id : number; 
     name : string;
     pos : Vector3d;
-    rot : Vector3d;
-    scale : Vector3d;
+    angleY : number;
+    angleX : number;
 
 
 }
 
-interface Vector3d{
-    X : number
-    Y : number
-    Z : number
-}
+
 interface hitBox{
     pos : Vector3d;
     rot : Vector3d;

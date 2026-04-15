@@ -8,9 +8,9 @@
 
         public Vector3d Pos { get; set; } = new Vector3d();
         
-        public Vector3d Rot { get; set; } = new Vector3d();
+        public double AngleX { get; set; }
+        public double AngleY { get; set; }
 
-        public Vector3d Scale { get; set; } = new Vector3d();
 
     }
     

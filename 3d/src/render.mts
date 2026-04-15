@@ -8,6 +8,8 @@ import { Vector3d } from './Entity.mts';
 import { Camera } from './Camera.mts';
 import { FOV } from './settings.mts';
 import connection from './connection.mts';
+import { State } from './GameState.mts';
+
 const renderer = new THREE.WebGLRenderer({ canvas: canvas });
 const world = new CANNON.World();
 renderer.setSize(WIDHT, HEIGHT);
@@ -15,10 +17,14 @@ renderer.shadowMap.enabled = true; // ✅ Включаем тени
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x87ceeb); // небо для наглядности
+const gameState = new State()
+
+connection.on("snapshot",(snapshot) => {console.log(snapshot), gameState.load(snapshot)})
 
 // Камера
-const player = new Player()
+const player = new Player("sds3323dsa")
 const camera = new Camera(FOV,WIDHT/HEIGHT,0.01)
+
 camera.folowTarget = player
 player.pos.y = 100
 world.addBody(player.obj)
@@ -85,12 +91,14 @@ function animation(){
     
     requestAnimationFrame(animation)
     // camera.position.set(obj.position.x,obj.position.y,obj.position.z)
-    
+    connection.invoke("OnCameraMove",player.rotX,player.rotY)
     YAW -= input.mouse.movementX / 1000
 
     PITCH -= input.mouse.movementY / 1000
     PITCH = Math.max(-Math.PI / 2, Math.min(Math.PI /2, PITCH))
+
     camera.quaternion.setFromEuler(new THREE.Euler(PITCH,YAW,0,"YXZ"))
+    connection.invoke("OnCameraMove",PITCH,YAW)
     let vectorCamera : THREE.Vector3 = new THREE.Vector3(0,0,0)
     
     camera.getWorldDirection(vectorCamera)
@@ -102,9 +110,11 @@ function animation(){
     if (input.keyboard["w"]?.isDown){
         // debugger
         player.obj.applyForce(new CANNON.Vec3(vectorCamera.x * 2000,0,vectorCamera.z * 2000))
-        Mvector.x += vectorCamera.x * 2000
+        Mvector.x += vectorCamera.x * 20000
         Mvector.y += 0
-        Mvector.x += vectorCamera.z * 2000
+        Mvector.x += vectorCamera.z * 20000
+        connection.invoke("OnMove",Mvector) // TODO: Временное решение (возможен рассинхрон)
+        
         
     }
     if (input.keyboard["s"]?.isDown){
@@ -112,6 +122,8 @@ function animation(){
         Mvector.x -= vectorCamera.x * 2000
         Mvector.y += 0
         Mvector.x -= vectorCamera.z * 2000
+        connection.invoke("OnMove",Mvector)
+       
     }
     const rightDirection = Vector3d.cross(vectorCamera,new Vector3d(0,1,0))
     if (input.keyboard["d"]?.isDown){
@@ -120,6 +132,8 @@ function animation(){
         Mvector.x += rightDirection.x * 2000
         Mvector.y += 0
         Mvector.x += rightDirection.z * 2000
+        connection.invoke("OnMove",Mvector)
+        
     }
     
     if (input.keyboard["a"]?.isDown){
@@ -127,9 +141,11 @@ function animation(){
         Mvector.x -= rightDirection.x * 2000
         Mvector.y += 0
         Mvector.x -= rightDirection.z * 2000
+        connection.invoke("OnMove",Mvector)
+        
     }
     
-    connection.invoke("")
+    
     world.step(1/60)
     player.sync()
     camera.sync()
